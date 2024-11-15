@@ -5,14 +5,14 @@ namespace flowora
 {
     public partial class MainPage : ContentPage
     {
-        public ICommand LabelTappedCommand { get; }
+        public ICommand PlantLabelTappedCommand { get; }
         private bool isPageLoading = false;
 
         public MainPage()
         {
             InitializeComponent();
 
-            LabelTappedCommand = new Command<string>(OnLabelTapped);
+            PlantLabelTappedCommand = new Command<string>(OnLabelTapped);
 
             BindingContext = this;
         }

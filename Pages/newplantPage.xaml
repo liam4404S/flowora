@@ -3,13 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="flowora.Pages.newplantPage"
              Title="nieuwe plant">
+    <Grid
+     RowDefinitions=".20*, .20*, .20*, .20*, .20*"
+     ColumnDefinitions=".20*, .70*, .10*"
+     Padding="0"
+     RowSpacing="10">
+        <Image
+             Grid.ColumnSpan="5"
+             Grid.RowSpan="5"
+             Source="app_background.png"
+             Aspect="AspectFill"
+             HorizontalOptions="Start"/>
 
-    <Image
-     Grid.ColumnSpan="3"
-     Grid.RowSpan="3"
-     Source="app_background.png"
-     Aspect="AspectFill"
-     HorizontalOptions="Start"/>
-    
-    
+        <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            Placeholder="plantnaam"
+            BackgroundColor="#769c79"
+            TextColor="Black"
+            FontSize="20"
+            HorizontalOptions="Center"
+            HeightRequest="50"
+            WidthRequest="250"
+            TranslationX="-30"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            TranslationX="-30"
+            HeightRequest="70"
+            WidthRequest="70"
+            Text="voeg toe"
+            LineBreakMode="WordWrap"/>
+
+    </Grid>
 </ContentPage>
