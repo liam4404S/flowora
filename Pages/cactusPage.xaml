@@ -3,10 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="flowora.Pages.CactusPage"
              Title="cactus">
-    <StackLayout Padding="20">
-        <Label 
-            Text="dit is de cactus pagina"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </StackLayout>
+    <Grid
+       RowDefinitions="150, auto, *"
+       ColumnDefinitions=".20*, .70*, .10*"
+       Padding="0"
+       RowSpacing="10">
+
+        <Image
+           Grid.ColumnSpan="3"
+           Grid.RowSpan="3"
+           Source="app_background.png"
+           Aspect="AspectFill"
+           HorizontalOptions="Start"/>
+
+        <Image 
+           Grid.Row="2"
+           Grid.Column="1"
+           Source="front_mascote.png"
+           HeightRequest="160"
+           VerticalOptions="Center"
+           HorizontalOptions="Start"/>
+
+        <Label x:Name="cactusDataLabel"
+               Grid.Row="1"
+               Grid.Column="1"
+               Text="Wachten op data..."
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+    </Grid>
 </ContentPage>

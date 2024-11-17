@@ -3,11 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="flowora.Pages.PlantdetailPage"
              Title="Plant info">
-    <StackLayout  Padding="20">
+    <Grid
+       RowDefinitions="150, auto, *"
+       ColumnDefinitions=".20*, .70*, .10*"
+       Padding="0"
+       RowSpacing="10">
+
+        <Image
+           Grid.ColumnSpan="3"
+           Grid.RowSpan="3"
+           Source="app_background.png"
+           Aspect="AspectFill"
+           HorizontalOptions="Start"/>
+
+        <Image 
+           Grid.Row="2"
+           Grid.Column="1"
+           Source="front_mascote.png"
+           HeightRequest="160"
+           VerticalOptions="Center"
+           HorizontalOptions="Start"/>
+        
         <Label 
+            Grid.Column="1"
             x:Name="PlantNameLabel"
             Text="Plant datails:"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </StackLayout>
+    </Grid>
 </ContentPage>

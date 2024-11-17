@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <Compile Remove="Pages\NewPage1.cs" />
+	  <Compile Remove="Pages\NewPage2.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
