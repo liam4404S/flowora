@@ -10,9 +10,12 @@
 
 
     <ShellContent
-        Title="Flowora"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <ShellContent Route="CactusPage" ContentTemplate="{DataTemplate pages:CactusPage}" />
-    <ShellContent Route="newplantPage" ContentTemplate="{DataTemplate pages:newplantPage}" />
+        Route="MainPage" 
+        ContentTemplate="{DataTemplate local:MainPage}"/>
+    <ShellContent 
+        Route="CactusPage" 
+        ContentTemplate="{DataTemplate pages:CactusPage}" />
+    <ShellContent 
+        Route="newplantPage"
+        ContentTemplate="{DataTemplate pages:newplantPage}" />
 </Shell>

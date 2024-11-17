@@ -1,4 +1,6 @@
-﻿namespace flowora
+﻿using flowora.Pages;
+
+namespace flowora
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new MainPage());
         }
     }
 }

@@ -18,7 +18,8 @@
         <Entry
             Grid.Row="1"
             Grid.Column="1"
-            Placeholder="plantnaam"
+            x:Name="PlantNameEntry"
+            Placeholder="nieuwe plantnaam"
             BackgroundColor="#769c79"
             TextColor="Black"
             FontSize="20"
@@ -34,7 +35,9 @@
             HeightRequest="70"
             WidthRequest="70"
             Text="voeg toe"
-            LineBreakMode="WordWrap"/>
+            LineBreakMode="WordWrap"
+            BackgroundColor="DarkGreen"
+            Clicked="OnAddPlantClicked"/>
 
     </Grid>
 </ContentPage>

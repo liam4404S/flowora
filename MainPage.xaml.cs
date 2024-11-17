@@ -1,22 +1,31 @@
 ﻿using flowora.Pages;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace flowora
 {
     public partial class MainPage : ContentPage
     {
+        public ObservableCollection<string> Planten { get; set; } = new ObservableCollection<string>();
         public ICommand PlantLabelTappedCommand { get; }
+        public ICommand MenuIconTappedCommand { get; }
         private bool isPageLoading = false;
 
         public MainPage()
         {
             InitializeComponent();
+            MenuIconTappedCommand = new Command(OnMenuIconTapped);
 
             PlantLabelTappedCommand = new Command<string>(OnLabelTapped);
 
             BindingContext = this;
+            Planten.Add("cactus");
         }
 
+        private void OnMenuIconTapped(object parameter)
+        {
+
+        }
 
         public async void OnLabelTapped(string plantName)
         {
@@ -24,12 +33,15 @@ namespace flowora
                 return;
             isPageLoading = true;
 
-            switch (plantName)
+            if(plantName == "cactus")
             {
-                case "cactus":
-                    await Navigation.PushAsync(new CactusPage());
-                    break;
+                await Navigation.PushAsync(new CactusPage());
             }
+            else if (Planten.Contains(plantName))
+            {
+                await Navigation.PushAsync(new PlantdetailPage(plantName));
+            }
+
             await btnWaitTimer();
             isPageLoading = false;
         }
@@ -44,7 +56,7 @@ namespace flowora
                 return;
             isPageLoading = true;
 
-            await Navigation.PushAsync(new newplantPage());
+            await Navigation.PushAsync(new newplantPage(this));
             await btnWaitTimer();
             isPageLoading = false;
         }
