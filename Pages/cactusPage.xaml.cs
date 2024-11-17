@@ -1,4 +1,4 @@
-using flowora.Pages;  // Zorg ervoor dat je juiste namespace gebruikt
+using flowora.Pages; 
 using System;
 
 namespace flowora.Pages
@@ -11,7 +11,7 @@ namespace flowora.Pages
         {
             InitializeComponent();
             _fileReader = new FileReader();
-            ReadFileFromNetwork();  // Roep de methode aan om het bestand te lezen
+            ReadFileFromNetwork(); 
         }
 
         private async void ReadFileFromNetwork()
