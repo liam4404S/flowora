@@ -4,9 +4,17 @@ using System.Threading.Tasks;
 
 public class FileReader
 {
+    private Action<string> _updatecactusLabel;
+
+    public FileReader(Action<string> updatecactusLabel)
+    {
+        _updatecactusLabel = updatecactusLabel;
+    }
+
     public async Task ReadFileOnNetwork()
     {
-        string filePath = @"\\raspberrypi\shared_folder\data.txt"; 
+        //on pi string filePath = @"\\raspberrypi\shared_folder\data.txt";
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "data.txt"); //local
 
         try
         {
@@ -14,16 +22,16 @@ public class FileReader
             if (File.Exists(filePath))
             {               
                 string fileContent = await File.ReadAllTextAsync(filePath);
-                Console.WriteLine(fileContent);  
+                _updatecactusLabel(fileContent);  
             }
             else
             {
-                Console.WriteLine("Bestand niet gevonden.");
+                _updatecactusLabel("Bestand niet gevonden.");
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Er is een fout opgetreden: " + ex.Message);
+            _updatecactusLabel("Er is een fout opgetreden: " + ex.Message);
         }
     }
 }
